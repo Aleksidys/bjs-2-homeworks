@@ -17,6 +17,14 @@ function solveEquation(a, b, c) {
 }
 solveEquation(1, 2, 1)
 
-function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  
+function calculateTotalMortgage(percent, contribution, amount, countMonths) //процент (в диапазоне от 0 до 100), начальный взнос, сумма кредита, срок в месяцах 
+{
+	const P = percent / 100 / 12;
+	const S = amount - contribution;
+	const n = countMonths;
+	const monthlyPayment = S * (P + P / (Math.pow(1 + P, n) - 1));
+	const totalAmount = (monthlyPayment * n).toFixed(2);
+	console.log(totalAmount)
+	return totalAmount;
 }
+calculateTotalMortgage(10, 0, 50000, 12)
