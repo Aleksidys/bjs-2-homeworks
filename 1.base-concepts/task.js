@@ -7,7 +7,7 @@ function solveEquation(a, b, c) {
   if (d > 0 ) {
     x = (-b + Math.sqrt(d) )/(2*a);
     arr.push(x);
-    x = (b - Math.sqrt(d) )/(2*a);
+    x = (-b - Math.sqrt(d) )/(2*a);
     arr.push(x);
   } else if (d === 0) {
    x = -b/(2*a);
@@ -25,7 +25,7 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) //п
 	const n = countMonths;
 	const monthlyPayment = S * (P + P / (Math.pow(1 + P, n) - 1));
 	const totalAmount = (monthlyPayment * n).toFixed(2);
-	let num = parseInt(totalAmount);
+	let num = Number(totalAmount);
 	return num;
 }
 calculateTotalMortgage(10, 0, 50000, 12)
