@@ -5,7 +5,6 @@ class AlarmClock {
   }
 
   addClock(time, callback) {
-      // const time = new Date(time.getHours(), time.getMinutes());
 
       if (time === null || callback === undefined) {
           throw new Error('Отсутствуют обязательные аргументы');
